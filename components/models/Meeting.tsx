@@ -12,7 +12,7 @@ import { useParams } from 'next/navigation'
 function Meeting() {
     const {id} = useParams()
     const { user } = useUser()
-    const {call , isCallLoading} = useGetCallById(id)
+    const {call , isCallLoading} = useGetCallById(id as string)
     const [isSetupComplete, setIsSetupComplete] = useState(false)
 
     if (!user || isCallLoading) return <Loader />
