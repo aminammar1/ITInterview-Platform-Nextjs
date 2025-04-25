@@ -28,8 +28,8 @@ function Recordings() {
         }
     };
 
-    fetchRecordings();
-    }, [calls]);
+    fetchRecordings()
+    }, [calls])
 
     if (isLoading) return <Loader />
 

@@ -7,10 +7,10 @@ import toast from 'react-hot-toast'
 
 
 function EndCall() {
-    const call = useCall();
-    const router = useRouter();
-    const { useLocalParticipant } = useCallStateHooks();
-    const localParticipant = useLocalParticipant();
+    const call = useCall()
+    const router = useRouter()
+    const { useLocalParticipant } = useCallStateHooks()
+    const localParticipant = useLocalParticipant()
 
     const updateInterviewStatus = useMutation(api.interviews.updateInterviewStatus);
 

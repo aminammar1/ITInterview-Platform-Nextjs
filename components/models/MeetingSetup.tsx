@@ -14,23 +14,23 @@ import { Button } from '../ui/button'
 function MeetingSetup({ onSetupComplete }: { onSetupComplete: () => void }) {
     const [isCameraDisabled, setIsCameraDisabled] = useState(true)
     const [isMicDisabled, setIsMicDisabled] = useState(false)
-    const call = useCall();
+    const call = useCall()
 
     if (!call) return null
 
     useEffect(() => {
         if (isCameraDisabled) call.camera.disable();
         else call.camera.enable();
-    }, [isCameraDisabled, call.camera]);
+    }, [isCameraDisabled, call.camera])
     
     useEffect(() => {
         if (isMicDisabled) call.microphone.disable();
         else call.microphone.enable();
-    }, [isMicDisabled, call.microphone]);
+    }, [isMicDisabled, call.microphone])
 
     const handleJoin = async () => {
-        await call.join();
-        onSetupComplete();
+        await call.join()
+        onSetupComplete()
     }
     return (
         <div className="min-h-screen flex items-center justify-center p-6 bg-background/95">

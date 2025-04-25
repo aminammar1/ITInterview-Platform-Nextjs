@@ -1,6 +1,6 @@
-import { Clock, Code2, Calendar, Users } from 'lucide-react'
+    import { Clock, Code2, Calendar, Users } from 'lucide-react'
 
-export const INTERVIEW_CATEGORY = [
+    export const INTERVIEW_CATEGORY = [
     { id: 'upcoming', title: 'Upcoming Interviews', variant: 'outline' },
     { id: 'completed', title: 'Completed', variant: 'secondary' },
     { id: 'succeeded', title: 'Succeeded', variant: 'default' },
@@ -25,6 +25,7 @@ export const INTERVIEW_CATEGORY = [
     '16:00',
     '16:30',
     '17:00',
+    '19:58',
     '00:05',
     ]
 
@@ -78,18 +79,35 @@ export const INTERVIEW_CATEGORY = [
         ],
         starterCode: {
         javascript: `function twoSum(nums, target) {
-    // Write your solution here
-    
-    }`,
+        // Write your solution here
+        
+        }`,
         python: `def two_sum(nums, target):
-        # Write your solution here
-        pass`,
+            # Write your solution here
+            pass`,
         java: `class Solution {
-        public int[] twoSum(int[] nums, int target) {
+            public int[] twoSum(int[] nums, int target) {
+                // Write your solution here
+                
+            }
+        }`,
+        dart: `List<int> twoSum(List<int> nums, int target) {
             // Write your solution here
             
-        }
-    }`,
+        }`,
+        go: `func twoSum(nums []int, target int) []int {
+            // Write your solution here
+            
+        }`,
+        cpp: `vector<int> twoSum(vector<int>& nums, int target) {
+            // Write your solution here
+            
+        }`,
+        c: `int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+            // Write your solution here
+            *returnSize = 2;
+            
+        }`,
         },
         constraints: [
         '2 ≤ nums.length ≤ 104',
@@ -115,18 +133,34 @@ export const INTERVIEW_CATEGORY = [
         ],
         starterCode: {
         javascript: `function reverseString(s) {
-    // Write your solution here
-    
-    }`,
+        // Write your solution here
+        
+        }`,
         python: `def reverse_string(s):
-        # Write your solution here
-        pass`,
+            # Write your solution here
+            pass`,
         java: `class Solution {
-        public void reverseString(char[] s) {
+            public void reverseString(char[] s) {
+                // Write your solution here
+                
+            }
+        }`,
+        dart: `void reverseString(List<String> s) {
             // Write your solution here
             
-        }
-    }`,
+        }`,
+        go: `func reverseString(s []byte) {
+            // Write your solution here
+            
+        }`,
+        cpp: `void reverseString(vector<char>& s) {
+            // Write your solution here
+            
+        }`,
+        c: `void reverseString(char* s, int sSize) {
+            // Write your solution here
+            
+        }`,
         },
     },
     {
@@ -150,19 +184,91 @@ export const INTERVIEW_CATEGORY = [
         ],
         starterCode: {
         javascript: `function isPalindrome(x) {
-    // Write your solution here
-    
-    }`,
+        // Write your solution here
+        
+        }`,
         python: `def is_palindrome(x):
-        # Write your solution here
-        pass`,
+            # Write your solution here
+            pass`,
         java: `class Solution {
-        public boolean isPalindrome(int x) {
+            public boolean isPalindrome(int x) {
+                // Write your solution here
+                
+            }
+        }`,
+        dart: `bool isPalindrome(int x) {
             // Write your solution here
             
-        }
-    }`,
+        }`,
+        go: `func isPalindrome(x int) bool {
+            // Write your solution here
+            
+        }`,
+        cpp: `bool isPalindrome(int x) {
+            // Write your solution here
+            
+        }`,
+        c: `bool isPalindrome(int x) {
+            // Write your solution here
+            
+        }`,
         },
+    },
+    // New coding question for algorithm implementation
+    {
+        id: 'fibonacci-sequence',
+        title: 'Fibonacci Sequence',
+        description:
+        'Write a function that returns the nth number in the Fibonacci sequence.\n\nThe Fibonacci sequence is defined as: F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n > 1.',
+        examples: [
+        {
+            input: 'n = 2',
+            output: '1',
+            explanation: 'F(2) = F(1) + F(0) = 1 + 0 = 1',
+        },
+        {
+            input: 'n = 3',
+            output: '2',
+            explanation: 'F(3) = F(2) + F(1) = 1 + 1 = 2',
+        },
+        {
+            input: 'n = 4',
+            output: '3',
+            explanation: 'F(4) = F(3) + F(2) = 2 + 1 = 3',
+        },
+        ],
+        starterCode: {
+        javascript: `function fibonacci(n) {
+        // Write your solution here
+        
+        }`,
+        python: `def fibonacci(n):
+            # Write your solution here
+            pass`,
+        java: `class Solution {
+            public int fibonacci(int n) {
+                // Write your solution here
+                
+            }
+        }`,
+        dart: `int fibonacci(int n) {
+            // Write your solution here
+            
+        }`,
+        go: `func fibonacci(n int) int {
+            // Write your solution here
+            
+        }`,
+        cpp: `int fibonacci(int n) {
+            // Write your solution here
+            
+        }`,
+        c: `int fibonacci(int n) {
+            // Write your solution here
+            
+        }`,
+        },
+        constraints: ['0 ≤ n ≤ 30'],
     },
     ]
 
@@ -170,6 +276,10 @@ export const INTERVIEW_CATEGORY = [
     { id: 'javascript', name: 'JavaScript', icon: '/javascript.png' },
     { id: 'python', name: 'Python', icon: '/python.png' },
     { id: 'java', name: 'Java', icon: '/java.png' },
+    { id: 'dart', name: 'Dart', icon: '/dart.png' },
+    { id: 'go', name: 'Go', icon: '/go.png' },
+    { id: 'cpp', name: 'C++', icon: '/cpp.png' },
+    { id: 'c', name: 'C', icon: '/c.png' },
     ] as const
 
     export interface CodeQuestion {
@@ -185,8 +295,12 @@ export const INTERVIEW_CATEGORY = [
         javascript: string
         python: string
         java: string
+        dart?: string
+        go?: string
+        cpp?: string
+        c?: string
     }
     constraints?: string[]
     }
 
-export type QuickActionType = (typeof QUICK_ACTIONS)[number]
+    export type QuickActionType = (typeof QUICK_ACTIONS)[number]

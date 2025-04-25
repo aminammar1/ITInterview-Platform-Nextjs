@@ -6,6 +6,8 @@ import {
     SpeakerLayout,
     useCallStateHooks,
 } from '@stream-io/video-react-sdk'
+
+import '@stream-io/video-react-sdk/dist/css/styles.css'
 import { useState } from 'react'
 import { LayoutListIcon, LoaderIcon, UsersIcon} from 'lucide-react'
 import { useRouter } from 'next/navigation'
