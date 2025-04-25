@@ -34,8 +34,6 @@ export default function Home() {
     }
   }
 
-  if (isLoading) return <Loader />
-
   return (
     <div className="container max-w-7xl mx-auto p-6 relative">
       {/* welcome section */}
