@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { api } from '@/convex/_generated/api'
 import { useRouter } from 'next/navigation'
 import MeetingModal from './MeetingModal'
-import { Loader2Icon, Terminal } from 'lucide-react'
+import { Terminal } from 'lucide-react'
 import MeetingCard from './MeetingCard'
 
 export default function Home() {
@@ -87,11 +87,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-8 relative z-10">
-            {interviews === undefined ? (
-              <div className="flex justify-center py-12">
-                <Loader2Icon className="h-8 w-8 animate-spin text-[#00ff41]" />
-              </div>
-            ) : interviews.length > 0 ? (
+            {interviews && interviews.length > 0 ? (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {interviews.map((interview) => (
                   <MeetingCard key={interview._id} interview={interview} />
