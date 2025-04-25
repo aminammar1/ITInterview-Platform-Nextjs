@@ -1,33 +1,34 @@
-import { useUser } from '@clerk/nextjs'
-import { useStreamVideoClient } from '@stream-io/video-react-sdk'
-import { useMutation, useQuery } from 'convex/react'
-import { useState } from 'react'
-import { api } from '@/convex/_generated/api'
-import toast from 'react-hot-toast'
-import {
+    import { useUser } from '@clerk/nextjs'
+    import { useStreamVideoClient } from '@stream-io/video-react-sdk'
+    import { useMutation, useQuery } from 'convex/react'
+    import { useState } from 'react'
+    import { api } from '@/convex/_generated/api'
+    import toast from 'react-hot-toast'
+    import {
     Dialog,
     DialogHeader,
     DialogTitle,
     DialogContent,
     DialogTrigger,
-} from '../ui/dialog'
-import { Button } from '../ui/button'
-import { Input } from '../ui/input'
-import { Textarea } from '../ui/textarea'
-import UserInfo from './UserInfo'
-import {
+    } from '../ui/dialog'
+    import { Button } from '../ui/button'
+    import { Input } from '../ui/input'
+    import { Textarea } from '../ui/textarea'
+    import UserInfo from './UserInfo'
+    import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from '../ui/select'
-import { Loader2Icon, XIcon } from 'lucide-react'
-import { Calendar } from '../ui/calendar'
-import { TIME_SLOTS } from '@/constants/data'
-import MeetingCard from './MeetingCard'
+    } from '../ui/select'
+    import { Loader2Icon, XIcon } from 'lucide-react'
+    import { DayPicker } from 'react-day-picker'
+    import 'react-day-picker/style.css'
+    import { TIME_SLOTS } from '@/constants/data'
+    import MeetingCard from './MeetingCard'
 
-function InterviewSchedule() {
+    function InterviewSchedule() {
     const client = useStreamVideoClient()
     const { user } = useUser()
     const [open, setOpen] = useState(false)
@@ -250,14 +251,14 @@ function InterviewSchedule() {
                     {/* CALENDAR */}
                     <div className="space-y-2">
                     <label className="text-sm font-medium">Date</label>
-                    <Calendar
+                    <DayPicker
                         mode="single"
                         selected={formData.date}
                         onSelect={(date) =>
                         date && setFormData({ ...formData, date })
                         }
                         disabled={(date) => date < new Date()}
-                        className="rounded-md border"
+                        className="rounded-md border p-3"
                     />
                     </div>
 
@@ -324,5 +325,5 @@ function InterviewSchedule() {
         )}
         </div>
     )
-}
-export default InterviewSchedule
+    }
+    export default InterviewSchedule
