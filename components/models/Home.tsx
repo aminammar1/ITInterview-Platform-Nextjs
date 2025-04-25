@@ -8,13 +8,12 @@ import { useState } from 'react'
 import { api } from '@/convex/_generated/api'
 import { useRouter } from 'next/navigation'
 import MeetingModal from './MeetingModal'
-import Loader from './Loader'
 import { Loader2Icon, Terminal } from 'lucide-react'
 import MeetingCard from './MeetingCard'
 
 export default function Home() {
   const router = useRouter()
-  const { isInterviewer, isCandidate, isLoading } = useUserRole()
+  const { isInterviewer } = useUserRole()
   const interviews = useQuery(api.interviews.getMyInterviews)
   const [showModal, setShowModal] = useState(false)
   const [modalType, setModalType] = useState<'start' | 'join'>()
