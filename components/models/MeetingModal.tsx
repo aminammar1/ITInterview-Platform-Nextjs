@@ -13,13 +13,13 @@ interface MeetingModalProps {
 }
 
 function MeetingModal({ isOpen, onClose, title, isJoinMeeting }: MeetingModalProps) {
-    const [meetingUrl, setMeetingUrl] = useState("");
+    const [meetingUrl, setMeetingUrl] = useState("")
     const { createInstantMeeting, joinMeeting } = useMeetingActions()
 
     const handleStart = () => {
         if (isJoinMeeting) {
         // if it's a full URL extract meeting ID
-        const meetingId = meetingUrl.split("/").pop();
+        const meetingId = meetingUrl.split("/").pop()
         if (meetingId) joinMeeting(meetingId)
         } else {
         createInstantMeeting()

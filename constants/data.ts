@@ -25,6 +25,7 @@ export const INTERVIEW_CATEGORY = [
     '16:00',
     '16:30',
     '17:00',
+    '00:05',
     ]
 
     export const QUICK_ACTIONS = [
