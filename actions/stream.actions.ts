@@ -6,7 +6,7 @@ import { StreamClient } from '@stream-io/node-sdk'
 export const streamTokenProvider = async () => {
     const user = await currentUser()  // Get the current user from Clerk
     
-    if (!user) throw new Error('User not authenticated')  // Handle unauthenticated user
+    if (!user)  return  // Handle unauthenticated user
     
     const streamClient = new StreamClient(  
     process.env.NEXT_PUBLIC_STREAM_API_KEY!,    

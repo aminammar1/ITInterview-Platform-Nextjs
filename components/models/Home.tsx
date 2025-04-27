@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { api } from '@/convex/_generated/api'
 import { useRouter } from 'next/navigation'
 import MeetingModal from './MeetingModal'
-import { Terminal } from 'lucide-react'
+import { RocketIcon } from 'lucide-react'
 import MeetingCard from './MeetingCard'
 
 export default function Home() {
@@ -36,20 +36,20 @@ export default function Home() {
   return (
     <div className="container max-w-7xl mx-auto p-6 relative">
       {/* welcome section */}
-      <div className="rounded-lg bg-black/80 border border-[#00ff41]/30 p-6 shadow-sm mb-10 relative z-10">
+      <div className="rounded-lg border border-border hover:border-primary/20  p-8 shadow-xl mb-10 relative z-10">
         <div className="flex items-center gap-2">
-          <Terminal className="h-6 w-6 text-[#00ff41]" />
-          <div className="font-mono text-xs text-[#00ff41]/70">
-            CodeTrix System v1.0
+          <RocketIcon className="h-6 w-6 text-white" />
+          <div className="font-sans text-sm text-gray-300">
+            CodeTrix Enterprise Suite
           </div>
         </div>
-        <h1 className="text-4xl font-bold text-[#00ff41] mt-2">
-          Welcome to the CodeTrix
+        <h1 className="text-4xl font-bold text-white mt-3 tracking-tight">
+          Welcome to CodeTrix
         </h1>
-        <p className="text-[#00ff41]/80 mt-2 font-mono">
+        <p className="text-gray-300 mt-2 font-light">
           {isInterviewer
-            ? '// Access the system. Control the codetrix. Evaluate the candidates.'
-            : "// You've entered the matrix. Your trials await."}
+            ? 'Streamlined technical interviews for modern enterprises. Evaluate talent efficiently.'
+            : 'Prepare to showcase your skills. Your opportunity awaits.'}
         </p>
       </div>
 
@@ -70,8 +70,8 @@ export default function Home() {
             onClose={() => setShowModal(false)}
             title={
               modalType === 'join'
-                ? 'Enter the CodeTrix '
-                : 'Initialize Simulation'
+                ? 'Join Interview Session'
+                : 'Start New Interview'
             }
             isJoinMeeting={modalType === 'join'}
           />
@@ -79,11 +79,11 @@ export default function Home() {
       ) : (
         <>
           <div className="relative z-10">
-            <h1 className="text-3xl font-bold text-[#00ff41] font-mono">
-              Interviews <span className="animate-pulse">_</span>
+            <h1 className="text-3xl font-bold text-white tracking-tight">
+              Upcoming Interviews
             </h1>
-            <p className="text-[#00ff41]/70 mt-1 font-mono">
-              // You have entered the codetrix . Your interview await.
+            <p className="text-gray-300 mt-1">
+              Your scheduled interview sessions are listed below.
             </p>
           </div>
           <div className="mt-8 relative z-10">
@@ -94,8 +94,8 @@ export default function Home() {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12 text-[#00ff41]/70 font-mono border border-dashed border-[#00ff41]/30 rounded-lg bg-black/50">
-                [System]: You have no scheduled interviews in the Codetrix
+              <div className="text-center py-12 text-gray-300 border border-border hover:border-primary/20 transition-all rounded-lg bg-black/50">
+                You have no scheduled interviews at this time.
               </div>
             )}
           </div>
